@@ -43,7 +43,7 @@ const DoctorCard: React.FC<DoctorCardProps> = ({ doctor }) => {
       {/* Availability Section */}
       <View style={styles.availabilityContainer}>
         <View style={styles.availableNowContainer}>
-          <FontAwesome name="circle" size={12} color="#10B981" />
+          <FontAwesome name="circle" size={12} color="#556600" />
           <Text style={styles.availableNow}> Available Now</Text>
         </View>
         <Text style={styles.consultationFee}>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
   availableNow: {
     fontSize: 14,
-    color: "#10B981",
+    color: "#556600",
     fontWeight: "bold",
     marginLeft: 4,
   },
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     color: "#111827",
   },
   bookButton: {
-    backgroundColor: "#1F2937",
+    backgroundColor: "#8c994e",
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 6,

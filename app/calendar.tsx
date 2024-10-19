@@ -71,7 +71,7 @@ const DailyNutrition = () => {
               style={[styles.dateItem, isSelected && styles.selectedDateItem]}
               onPress={() => setSelectedDate(item.date)}
             >
-              <Text style={styles.monthText}>{format(item.date, "MMM")}</Text>
+              <Text style={[styles.monthText, isSelected && styles.selectedMonthText]}>{format(item.date, "MMM")}</Text>
               <Text
                 style={[styles.dayText, isSelected && styles.selectedDayText]}
               >
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   dateItem: {
-    backgroundColor: "white", // Light purple for unselected date boxes
+    backgroundColor: "#e6f2ab", // Light purple for unselected date boxes
     paddingVertical: 10,
     paddingHorizontal: 12,
     borderRadius: 10,
@@ -146,17 +146,20 @@ const styles = StyleSheet.create({
     borderColor: "transparent", // Transparent by default
   },
   selectedDateItem: {
-    backgroundColor: "#CDC1FF", // Light purple for unselected date boxes
-    borderColor: "#847AE1", // Same color for border to blend with background
+    backgroundColor: "#8c994e", // Light purple for unselected date boxes
+    borderColor: "#8c994e", // Same color for border to blend with background
   },
   monthText: {
     fontSize: 12,
-    color: "#6B7280", // Darker text for month
+    color: "#8c994e", // Darker text for month
   },
   dayText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#4B5563", // Neutral color for unselected day
+    color: "#8c994e", // Neutral color for unselected day
+  },
+  selectedMonthText: {
+    color: "#FFFFFF",
   },
   selectedDayText: {
     color: "#FFFFFF", // White for selected day text
@@ -167,15 +170,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   mealButton: {
-    backgroundColor: "#E4DFFF", // Light purple for meal button background
+    backgroundColor: "#e6f2ab", // Light purple for meal button background
     paddingVertical: 8,
     paddingHorizontal: 20,
     borderRadius: 10,
     marginHorizontal: 5,
   },
   selectedMealButton: {
-    backgroundColor: "#A39BFF", // Darker shade for selected meal button
-    borderColor: "#847AE1", // Border for the selected meal button
+    backgroundColor: "#8c994e", // Darker shade for selected meal button
+    borderColor: "#8c994e", // Border for the selected meal button
     borderWidth: 2,
   },
   mealButtonText: {
