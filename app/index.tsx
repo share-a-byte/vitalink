@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import DailyNutrition from "./calendar";
 
 export default function Index() {
   return (
@@ -9,7 +10,8 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <DailyNutrition />
+      {/* <Text>Edit app/index.tsx to edit.</Text> */}
     </View>
   );
 }

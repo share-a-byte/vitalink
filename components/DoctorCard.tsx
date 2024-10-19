@@ -19,32 +19,51 @@ interface DoctorCardProps {
 const DoctorCard: React.FC<DoctorCardProps> = ({ doctor }) => {
   return (
     <View style={styles.cardContainer}>
-      <View style={styles.doctorInfo}>
-        <Image
-          source={{ uri: "https://via.placeholder.com/50" }}
-          style={styles.doctorImage}
-        />
-        <View style={styles.doctorDetails}>
-          <Text style={styles.doctorName}>{doctor.name}</Text>
-          <Text style={styles.specialtyText}>{doctor.specialty}</Text>
-          <View style={styles.availabilityContainer}>
-            <Text style={styles.availableNow}>Available Now</Text>
-            <Text style={styles.consultationFee}>
-              {doctor.consultationFee} Consultation Fee
-            </Text>
+      {/* Top Section: Doctor Info and Rating */}
+      <View style={styles.topSection}>
+        <View style={styles.doctorInfo}>
+          {/* Doctor Image */}
+          <Image
+            source={{ uri: "https://via.placeholder.com/50" }} // Replace with actual image source
+            style={styles.doctorImage}
+          />
+          <View style={styles.doctorDetails}>
+            <Text style={styles.doctorName}>{doctor.name}</Text>
+            <Text style={styles.specialtyText}>{doctor.specialty}</Text>
           </View>
         </View>
-      </View>
-      <Text style={styles.videoConsult}>📹 Video Consult</Text>
-      <View style={styles.cardFooter}>
+
+        {/* Rating Section */}
         <View style={styles.ratingContainer}>
-          <FontAwesome name="star" size={18} color="#FFD700" />
+          <FontAwesome name="star" size={16} color="#FFD700" />
           <Text style={styles.ratingText}>{doctor.rating}</Text>
         </View>
-        <TouchableOpacity style={styles.bookButton}>
-          <Text style={styles.bookButtonText}>Book Appointment</Text>
-        </TouchableOpacity>
       </View>
+
+      {/* Availability Section */}
+      <View style={styles.availabilityContainer}>
+        <View style={styles.availableNowContainer}>
+          <FontAwesome name="circle" size={12} color="#10B981" />
+          <Text style={styles.availableNow}> Available Now</Text>
+        </View>
+        <Text style={styles.consultationFee}>
+          <Text style={styles.consultationFeeText}>
+            {doctor.consultationFee}
+          </Text>{" "}
+          Consultation Fee
+        </Text>
+      </View>
+
+      {/* Book Appointment Button */}
+      <TouchableOpacity style={styles.bookButton}>
+        <Text style={styles.bookButtonText}>Book Appointment</Text>
+        <FontAwesome
+          name="arrow-right"
+          size={16}
+          color="#fff"
+          style={styles.arrowIcon}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -62,8 +81,15 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 3,
   },
+  topSection: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
+  },
   doctorInfo: {
     flexDirection: "row",
+    alignItems: "center",
   },
   doctorImage: {
     width: 50,
@@ -77,37 +103,11 @@ const styles = StyleSheet.create({
   doctorName: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 4,
+    color: "#111827",
   },
   specialtyText: {
     color: "#6B7280",
-    marginBottom: 8,
-  },
-  availabilityContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
     marginTop: 4,
-  },
-  availableNow: {
-    fontSize: 14,
-    color: "#10B981",
-    fontWeight: "bold",
-  },
-  consultationFee: {
-    fontSize: 14,
-    color: "#4B5563",
-  },
-  videoConsult: {
-    marginVertical: 8,
-    fontSize: 14,
-    color: "#10B981",
-    fontWeight: "bold",
-  },
-  cardFooter: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
   },
   ratingContainer: {
     flexDirection: "row",
@@ -118,16 +118,47 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#4B5563",
   },
+  availabilityContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  availableNowContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  availableNow: {
+    fontSize: 14,
+    color: "#10B981",
+    fontWeight: "bold",
+    marginLeft: 4,
+  },
+  consultationFee: {
+    fontSize: 14,
+    color: "#4B5563",
+  },
+  consultationFeeText: {
+    fontWeight: "bold",
+    fontSize: 16,
+    color: "#111827",
+  },
   bookButton: {
     backgroundColor: "#1F2937",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
     borderRadius: 6,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   bookButtonText: {
     color: "#FFFFFF",
     fontWeight: "bold",
-    fontSize: 14,
+    fontSize: 16,
+  },
+  arrowIcon: {
+    marginLeft: 8,
   },
 });
 
