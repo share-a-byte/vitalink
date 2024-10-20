@@ -35,40 +35,12 @@ export default function RootLayout() {
             } else if (route.name === "ingredients") {
               iconName = "leaf";
             }
-            return null;
+            return <FontAwesome name={iconName} size={18} color={color} />;
           },
-          tabBarLabel: ({ color }: { color: string }) => (
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text
-                style={{
-                  color,
-                  fontFamily: "MontserratRegular",
-                  fontSize: 12,
-                  marginRight: 5,
-                }}
-              >
-                {route.name === "index"
-                  ? "Home"
-                  : route.name === "doctors"
-                  ? "Doctors"
-                  : "Ingredients"}
-              </Text>
-              <FontAwesome
-                name={
-                  route.name === "index"
-                    ? "home"
-                    : route.name === "doctors"
-                    ? "user-md"
-                    : "leaf"
-                }
-                size={18}
-                color={color}
-              />
-            </View>
-          ),
+          tabBarLabel: () => null, // Removes the label
           tabBarActiveTintColor: "#2A9D8F",
           tabBarInactiveTintColor: "#888",
-          tabBarShowLabel: true,
+          tabBarShowLabel: false, // Ensure labels are not shown
           tabBarStyle: {
             backgroundColor: "#fff",
             elevation: 0,
