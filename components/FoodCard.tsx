@@ -27,22 +27,16 @@ const FoodCard: React.FC<FoodCardProp> = ({ foodCard }) => {
           source={{ uri: "https://via.placeholder.com/50" }}
           style={styles.foodImage}
         />
+        
 
         <View style={styles.foodDetails}>
             <Text style={styles.foodName}>{foodCard.name}</Text>
             <Text style={styles.foodInfoText}>️‍🔥 Calories: {foodCard.calories}</Text>
             <Text style={styles.foodInfoText}>Serving: {foodCard.servingSize}</Text>
-
-        </View>
-      </View>
-
-        <TouchableOpacity style={styles.moreInfoButton}>
-            <Text style={styles.moreInfoButtonText}>See more</Text>
-        </TouchableOpacity>
-
-      <View style={styles.cardFooter}>
-
-        <View style={styles.macroContainer}>
+            
+            <View style={styles.macroContainer}>
+            
+        
             <View style={styles.macroItem}>
                 <Text style={styles.macroText}>{foodCard.carbs}g</Text>
                 <Text style={styles.macroText}>Carbs</Text>
@@ -58,6 +52,17 @@ const FoodCard: React.FC<FoodCardProp> = ({ foodCard }) => {
                 <Text style={styles.macroText}>Fat</Text>
             </View>
         </View>
+        </View>
+        
+      </View>
+      
+
+        <TouchableOpacity style={styles.moreInfoButton}>
+            <Text style={styles.moreInfoButtonText}>See more</Text>
+        </TouchableOpacity>
+
+      <View style={styles.cardFooter}>
+
 
       </View>
     </View>
@@ -67,6 +72,7 @@ const FoodCard: React.FC<FoodCardProp> = ({ foodCard }) => {
 
 const styles = StyleSheet.create({
     cardContainer: {
+        
         backgroundColor: "#FFFFFF",
         borderRadius: 10,
         padding: 16,
@@ -81,10 +87,10 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     foodImage: {
-        width: 50,
-        height: 50,
+        width: 120,
+        height: 120,
         borderRadius: 25,
-        marginRight: 16,
+        marginRight: 20,
     },
     moreInfoButton: {
         backgroundColor: "#1F2937",
