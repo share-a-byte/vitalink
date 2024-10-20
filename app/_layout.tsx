@@ -22,7 +22,7 @@ export default function RootLayout() {
       />
 
       <Tabs.Screen
-        name="doctors"
+        name="doctor"
         options={{
           tabBarLabel: "Doctors",
           tabBarIcon: ({ color, size }) => (
