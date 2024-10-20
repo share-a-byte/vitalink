@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { addDays, format, startOfWeek } from "date-fns"; // Date utilities for handling current week
+import CustomText from "@/components/CustomText";
 
 // Define the type for weekDates
 interface WeekDate {
@@ -38,7 +39,7 @@ const DailyNutrition = () => {
     <View style={styles.container}>
       {/* Header with title and icons */}
       <View style={styles.header}>
-        <Text style={styles.title}>Daily Nutritions</Text>
+        <CustomText style={styles.title}>Daily Nutrition</CustomText>
         <View style={styles.headerIcons}>
           <FontAwesome
             name="plus"
@@ -71,7 +72,14 @@ const DailyNutrition = () => {
               style={[styles.dateItem, isSelected && styles.selectedDateItem]}
               onPress={() => setSelectedDate(item.date)}
             >
-              <Text style={[styles.monthText, isSelected && styles.selectedMonthText]}>{format(item.date, "MMM")}</Text>
+              <CustomText
+                style={[
+                  styles.monthText,
+                  isSelected && styles.selectedMonthText,
+                ]}
+              >
+                {format(item.date, "MMM")}
+              </CustomText>
               <Text
                 style={[styles.dayText, isSelected && styles.selectedDayText]}
               >
@@ -93,14 +101,14 @@ const DailyNutrition = () => {
             ]}
             onPress={() => setSelectedMeal(meal)}
           >
-            <Text
+            <CustomText
               style={[
                 styles.mealButtonText,
                 meal === selectedMeal && styles.selectedMealText,
               ]}
             >
               {meal}
-            </Text>
+            </CustomText>
           </TouchableOpacity>
         ))}
       </View>
@@ -182,7 +190,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   mealButtonText: {
-    fontSize: 16,
+    fontSize: 14,
     color: "#4B5563", // Darker text for unselected meal
   },
   selectedMealText: {
