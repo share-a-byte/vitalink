@@ -36,7 +36,7 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
         </View>
       </View>
       <TouchableOpacity style={styles.contactButton}>
-        <Text style={styles.contactButtonText}>Contact User</Text>
+        <Text style={styles.contactButtonText}>Customize Profile</Text>
       </TouchableOpacity>
     </View>
   );
