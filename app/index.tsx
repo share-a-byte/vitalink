@@ -10,7 +10,6 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <DailyNutrition />
       {/* <Text>Edit app/index.tsx to edit.</Text> */}
     </View>
   );

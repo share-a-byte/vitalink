@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-// Define the type for doctor prop
+// Define the type for chat card prop
 interface ChatCard {
   id: string;
   name: string;
