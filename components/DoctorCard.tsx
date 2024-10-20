@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
   doctorInfo: {
     flexDirection: "row",
     alignItems: "center",
+    fontFamily: "MontserratRegular",
   },
   doctorImage: {
     width: 50,
@@ -99,11 +100,13 @@ const styles = StyleSheet.create({
   },
   doctorDetails: {
     flex: 1,
+    fontFamily: "MontserratRegular",
   },
   doctorName: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#111827",
+    fontFamily: "MontserratRegular",
   },
   specialtyText: {
     color: "#6B7280",
@@ -117,6 +120,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
     fontSize: 16,
     color: "#4B5563",
+    fontFamily: "MontserratRegular",
   },
   availabilityContainer: {
     flexDirection: "row",
@@ -133,6 +137,7 @@ const styles = StyleSheet.create({
     color: "#556600",
     fontWeight: "bold",
     marginLeft: 4,
+    fontFamily: "MontserratRegular",
   },
   consultationFee: {
     fontSize: 14,
@@ -142,6 +147,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
     color: "#111827",
+    fontFamily: "MontserratRegular",
   },
   bookButton: {
     backgroundColor: "#8c994e",
@@ -155,7 +161,8 @@ const styles = StyleSheet.create({
   bookButtonText: {
     color: "#FFFFFF",
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 14,
+    fontFamily: "MontserratRegular",
   },
   arrowIcon: {
     marginLeft: 8,
