@@ -1,8 +1,12 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons"; // Icons for TabBar
+import { useFonts } from "expo-font";
 
 export default function RootLayout() {
+  const [loaded] = useFonts({
+    SpaceMono: require('../assets/fonts/MontserratRegular.ttf'),
+  });
   return (
     <Tabs
       screenOptions={{
