@@ -63,13 +63,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 12,
+    marginBottom: '3%',
   },
   chatInfo: {
     flexDirection: "row",
     alignItems: "center",
   },
   chatUserImage: {
+    bottom: 20,
     width: 50,
     height: 50,
     borderRadius: 25,
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     color: "#111827",
   },
   chatRecentMessage: {
-
+    paddingTop: '5%',
   },
 });
 

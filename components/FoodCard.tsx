@@ -37,7 +37,7 @@ const FoodCard: React.FC<FoodCardProp> = ({ foodCard }) => {
       </View>
 
         <TouchableOpacity style={styles.moreInfoButton}>
-            <Text style={styles.moreInfoButtonText}>See more</Text>
+            <Text style={styles.moreInfoButtonText}>...</Text>
         </TouchableOpacity>
 
       <View style={styles.cardFooter}>
@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
     },
     moreInfoButton: {
         backgroundColor: "#1F2937",
-        paddingVertical: 8,
+        paddingVertical: 3,
         paddingHorizontal: 8,
-        borderRadius: 10,
+        borderRadius: 20,
         position: 'absolute',
         top: 10,
         right: 10,   
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
     moreInfoButtonText: {
         color: "#FFFFFF",
         fontWeight: "bold",
-        fontSize: 14,
+        alignItems: "center",
+        fontSize: 12,
     },
     foodDetails: {
         flex: 1,
@@ -129,7 +130,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '100%',
-        paddingHorizontal: 10,   
         marginTop: 4,
     },
     macroItem: {
@@ -138,7 +138,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',   
         justifyContent: 'space-between',
         width: '100%',
-        paddingHorizontal: '15%',
+        paddingTop: '6%',
+        paddingHorizontal: '1%',
     },
     macroText: {
         fontSize: 20,
