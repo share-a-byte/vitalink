@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import DailyNutrition from "./calendar";
+import DailyNutrition from "../components/calendar";
 
 export default function Index() {
   return (
