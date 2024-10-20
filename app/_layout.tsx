@@ -5,7 +5,6 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { View, Text } from "react-native";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -29,14 +28,13 @@ export default function RootLayout() {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }: { color: string; size: number }) => {
             let iconName: keyof typeof FontAwesome.glyphMap = "home";
-
             if (route.name === "index") {
               iconName = "home";
             } else if (route.name === "doctors") {
               iconName = "user-md";
+            } else if (route.name === "ingredients") {
+              iconName = "leaf";
             }
-
-            // We'll return null here as we'll render the icon in tabBarLabel
             return null;
           },
           tabBarLabel: ({ color }: { color: string }) => (
@@ -46,13 +44,23 @@ export default function RootLayout() {
                   color,
                   fontFamily: "MontserratRegular",
                   fontSize: 12,
-                  marginRight: 5, // Add some space between text and icon
+                  marginRight: 5,
                 }}
               >
-                {route.name === "index" ? "Home" : "Doctors"}
+                {route.name === "index"
+                  ? "Home"
+                  : route.name === "doctors"
+                  ? "Doctors"
+                  : "Ingredients"}
               </Text>
               <FontAwesome
-                name={route.name === "index" ? "home" : "user-md"}
+                name={
+                  route.name === "index"
+                    ? "home"
+                    : route.name === "doctors"
+                    ? "user-md"
+                    : "leaf"
+                }
                 size={18}
                 color={color}
               />
@@ -73,6 +81,7 @@ export default function RootLayout() {
       >
         <Tabs.Screen name="index" />
         <Tabs.Screen name="doctors" />
+        <Tabs.Screen name="ingredients" />
       </Tabs>
     </View>
   );
