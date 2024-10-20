@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons"; // Importing icons
 
 // Define the type for food prop
 interface Food {
@@ -11,145 +11,123 @@ interface Food {
   protein: number;
   carbs: number;
   fat: number;
-  image?: HTMLImageElement
+  color: string[]; // Background color array
+  icon: string; // Icon name
 }
 
 interface FoodCardProp {
-    foodCard: Food;
+  foodCard: Food;
 }
 
 const FoodCard: React.FC<FoodCardProp> = ({ foodCard }) => {
-    
   return (
-    <View style={styles.cardContainer}>
+    <View
+      style={[
+        styles.cardContainer,
+        { backgroundColor: foodCard.color[0] }, // Using color passed from props
+      ]}
+    >
       <View style={styles.foodInfo}>
-        <Image
-          source={{ uri: "https://via.placeholder.com/50" }}
-          style={styles.foodImage}
+        {/* Display icon passed from props */}
+        <FontAwesome5
+          name={foodCard.icon}
+          size={30} // Smaller icon size
+          color="#555" // Adjust icon color as needed
+          style={styles.foodIcon}
         />
-        
 
         <View style={styles.foodDetails}>
-            <Text style={styles.foodName}>{foodCard.name}</Text>
-            <Text style={styles.foodInfoText}>️‍🔥 Calories: {foodCard.calories}</Text>
-            <Text style={styles.foodInfoText}>Serving: {foodCard.servingSize}</Text>
-            
-            <View style={styles.macroContainer}>
-            
-        
+          <Text style={styles.foodName}>{foodCard.name}</Text>
+          <Text style={styles.foodInfoText}>
+            🔥 Calories: {foodCard.calories}
+          </Text>
+          <Text style={styles.foodInfoText}>
+            Serving: {foodCard.servingSize}
+          </Text>
+
+          <View style={styles.macroContainer}>
             <View style={styles.macroItem}>
-                <Text style={styles.macroText}>{foodCard.carbs}g</Text>
-                <Text style={styles.macroText}>Carbs</Text>
-            </View>
-            
-            <View style={styles.macroItem}>
-                <Text style={styles.macroText}>{foodCard.protein}g</Text>
-                <Text style={styles.macroText}>Protein</Text>
+              <Text style={styles.macroText}>{foodCard.carbs}g</Text>
+              <Text style={styles.macroText}>Carbs</Text>
             </View>
 
             <View style={styles.macroItem}>
-                <Text style={styles.macroText}>{foodCard.fat}g</Text>
-                <Text style={styles.macroText}>Fat</Text>
+              <Text style={styles.macroText}>{foodCard.protein}g</Text>
+              <Text style={styles.macroText}>Protein</Text>
             </View>
+
+            <View style={styles.macroItem}>
+              <Text style={styles.macroText}>{foodCard.fat}g</Text>
+              <Text style={styles.macroText}>Fat</Text>
+            </View>
+          </View>
         </View>
-        </View>
-        
       </View>
-      
 
-        <TouchableOpacity style={styles.moreInfoButton}>
-            <Text style={styles.moreInfoButtonText}>See more</Text>
-        </TouchableOpacity>
-
-      <View style={styles.cardFooter}>
-
-
-      </View>
+      <TouchableOpacity style={styles.moreInfoButton}>
+        <Text style={styles.moreInfoButtonText}>see more</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
-
 const styles = StyleSheet.create({
-    cardContainer: {
-        
-        backgroundColor: "#FFFFFF",
-        borderRadius: 10,
-        padding: 16,
-        marginBottom: 16,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 8,
-        elevation: 3,
-    },
-    foodInfo: {
-        flexDirection: "row"
-    },
-    foodImage: {
-        width: 120,
-        height: 120,
-        borderRadius: 25,
-        marginRight: 20,
-    },
-    moreInfoButton: {
-        backgroundColor: "#1F2937",
-        paddingVertical: 8,
-        paddingHorizontal: 8,
-        borderRadius: 10,
-        position: 'absolute',
-        top: 10,
-        right: 10,   
-    },
-    moreInfoButtonText: {
-        color: "#FFFFFF",
-        fontWeight: "bold",
-        fontSize: 14,
-    },
-    foodDetails: {
-        flex: 1,
-    },
-    foodName : {
-        fontSize: 18,
-        fontWeight: "bold",
-        marginBottom: 4,
-    },
-    foodInfoText: {
-        fontSize: 14,
-        fontWeight: "bold",
-        marginBottom: 4,
-    },
-    calorieCount: {
-        fontSize: 10,
-    },
-    servingSize: {
-        fontSize: 10,
-    },
-    cardFooter: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    macroContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: '100%',
-        paddingHorizontal: 10,   
-        marginTop: 4,
-    },
-    macroItem: {
-        flexDirection: 'column',
-        flex: 1,
-        alignItems: 'center',   
-        justifyContent: 'space-between',
-        width: '100%',
-        paddingHorizontal: '15%',
-    },
-    macroText: {
-        fontSize: 20,
-    },
-
+  cardContainer: {
+    borderRadius: 15,
+    padding: 20,
+    marginBottom: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    elevation: 5,
+  },
+  foodInfo: {
+    flexDirection: "row",
+  },
+  foodIcon: {
+    marginRight: 20,
+  },
+  moreInfoButton: {
+    backgroundColor: "black",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 15,
+    position: "absolute",
+    top: 10,
+    right: 10,
+  },
+  moreInfoButtonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+  },
+  foodDetails: {
+    flex: 1,
+  },
+  foodName: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 6,
+  },
+  foodInfoText: {
+    fontSize: 14,
+    color: "#555",
+    marginBottom: 4,
+  },
+  macroContainer: {
+    flexDirection: "row",
+    marginTop: 8,
+  },
+  macroItem: {
+    alignItems: "center",
+    flex: 1,
+  },
+  macroText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#555",
+  },
 });
 
 export default FoodCard;

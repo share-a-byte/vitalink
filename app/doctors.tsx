@@ -44,13 +44,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#F7F8FB",
     paddingHorizontal: 16,
     paddingTop: 20,
-    fontFamily: "MontserratRegular", // Set Montserrat as the default font
   },
   header: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 16,
-    fontFamily: "MontserratRegular", // Set Montserrat as the default font
+    fontFamily: "MontserratRegular", 
   },
   list: {
     paddingBottom: 20,
