@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577885102426",
+    "project_id": "vitalink-90c81",
+    "storage_bucket": "vitalink-90c81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577885102426:android:97d059fdc0200ef5aad363",
+        "android_client_info": {
+          "package_name": "com.anonymous.vitalink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuEqAhDR1dNHEwlrJ8VTlXEi1ukH4qVsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,7 +18,7 @@ const doctors = [
     name: "Dr. Watson Karistin",
     specialty: "Gynecologist (5 years Exp)",
     rating: 4.5,
-    consultationFee: "$40.00",
+    consultationFee: "$40",
     available: true,
   },
   // Add more doctors as needed
@@ -44,11 +44,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#F7F8FB",
     paddingHorizontal: 16,
     paddingTop: 20,
+    fontFamily: "MontserratRegular", // Set Montserrat as the default font
   },
   header: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 16,
+    fontFamily: "MontserratRegular", // Set Montserrat as the default font
   },
   list: {
     paddingBottom: 20,
