@@ -68,11 +68,13 @@ const styles = StyleSheet.create({
   },
   ageText: {
     color: "#6B7280",
+    marginTop: 4,
     marginBottom: 4,
     fontSize: 16,
   },
   birthdateText: {
     color: "#6B7280",
+    marginBottom: 4,
     fontSize: 16,
   },
   phoneText: {
@@ -84,6 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#10B981",
     fontWeight: "bold",
+    marginTop: 4,
     marginRight: 8, 
   },
   infoRow: {
